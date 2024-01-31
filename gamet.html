@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var lagi = true;
+      while (lagi) {
+        var heart = 3;
+        var ai = Math.floor(Math.random() * 10) + 1;
+        var hasil = "";
+
+        while (heart >= 1) {
+          alert("Tebak dimana korban di sembunyikan anda memiliki " + heart + " nyawa sebelum musuh mendekat");
+          var p = parseInt(prompt("tebak dikamar mana korban di sembunyikan \n1-10"));
+          if (p === ai) {
+            hasil = "BENAR";
+            alert("anda " + hasil + " korban berapa di kamar nomor" + ai);
+            break;
+          } else if (p < ai) {
+            hasil = "rendah";
+            heart -= 1;
+            alert("tebakan anda " + hasil + " dari jawabab nya dan sisa nyawa ada " + heart);
+          } else if (p > ai) {
+            hasil = "tinggi";
+            heart -= 1;
+            alert(" tebakan anda masih terlalu" + hasil + " dari jawabanya dan sisa nyawa ada " + heart);
+          }
+
+          if (heart === 0) {
+            alert("nyawa anda telah habis. korban berada di kamar nomor \n " + ai);
+            lagi = confirm("START");
+          }
+        }
+      }
+      alert("terimakasih telah bermain");
+    </script>
+  </body>
+</html>
